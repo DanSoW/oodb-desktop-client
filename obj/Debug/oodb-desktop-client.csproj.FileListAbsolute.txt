@@ -1,0 +1,14 @@
+C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\oodb-desktop-client.exe.config
+C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\oodb-desktop-client.exe
+C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\oodb-desktop-client.pdb
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.csproj.AssemblyReference.cache
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.csproj.SuggestedBindingRedirects.cache
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb_desktop_client.Window.resources
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb_desktop_client.Properties.Resources.resources
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.csproj.GenerateResource.cache
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.csproj.CoreCompileInputs.cache
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.exe
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.pdb
+C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.csproj.CopyComplete
