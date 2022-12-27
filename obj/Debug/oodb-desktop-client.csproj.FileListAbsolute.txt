@@ -12,3 +12,5 @@ C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.pdb
 C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\Learning\test\oodb-desktop-client\obj\Debug\oodb-desktop-client.csproj.CopyComplete
+C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\Bogus.dll
+C:\Projects\Learning\test\oodb-desktop-client\bin\Debug\Bogus.xml

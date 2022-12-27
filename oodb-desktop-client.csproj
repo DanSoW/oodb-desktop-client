@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bogus, Version=34.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>packages\Bogus.34.0.2\lib\net40\Bogus.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -50,17 +53,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="constants\ApiUrl.cs" />
+    <Compile Include="generators\AdminGenerator.cs" />
+    <Compile Include="generators\DataSourceGenerator.cs" />
+    <Compile Include="generators\HostGenerator.cs" />
+    <Compile Include="generators\ProgressInfo.cs" />
     <Compile Include="models\AdminModel.cs" />
     <Compile Include="models\DataSourceModel.cs" />
     <Compile Include="models\HostModel.cs" />
     <Compile Include="models\HostServiceModel.cs" />
     <Compile Include="models\HttpModel.cs" />
+    <Compile Include="models\IdModel.cs" />
     <Compile Include="models\IndexModel.cs" />
     <Compile Include="models\MessageModel.cs" />
     <Compile Include="models\MonitorAppModel.cs" />
     <Compile Include="models\ServiceModel.cs" />
     <Compile Include="services\AdminService.cs" />
+    <Compile Include="services\BaseService.cs" />
+    <Compile Include="services\DataSourceService.cs" />
+    <Compile Include="services\HostService.cs" />
+    <Compile Include="services\HostServiceService.cs" />
+    <Compile Include="services\MonitorAppService.cs" />
+    <Compile Include="services\ServiceService.cs" />
     <Compile Include="utils\GridViewUtil.cs" />
+    <Compile Include="utils\ReflectionUtil.cs" />
     <Compile Include="utils\ValidateUtil.cs" />
     <Compile Include="Window.cs">
       <SubType>Form</SubType>
@@ -96,5 +111,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

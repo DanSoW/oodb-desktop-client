@@ -51,8 +51,8 @@ namespace oodb_desktop_client.utils
 
             for(var i = 0; i < data.Rows.Count; i++)
             {
-
-                if (((IComparable<T>)data.Rows[i].Cells[indexColumn].Value).CompareTo(value) == 0)
+                if ((data.Rows[i].Cells[indexColumn].Value != null) && 
+                    ((IComparable<T>)data.Rows[i].Cells[indexColumn].Value).CompareTo(value) == 0)
                 {
                     index = i;
                     break;
