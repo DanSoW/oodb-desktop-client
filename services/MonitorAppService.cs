@@ -15,6 +15,9 @@ using System.Windows.Forms;
 
 namespace oodb_desktop_client.services
 {
+    /// <summary>
+    /// Класс сервиса для коллекции объектов MonitorApp
+    /// </summary>
     public class MonitorAppService : BaseService
     {
         public MonitorAppService(DataGridView data) : base(data) { }
@@ -110,18 +113,6 @@ namespace oodb_desktop_client.services
             {
                 return;
             }
-
-            /*if (!ValidateUtil.IsValidEmail(textBoxName.Text))
-            {
-                MessageBox.Show(
-                    "Не правильный формат Email-адреса",
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-
-                return;
-            }*/
 
             if (operation == "save")
             {

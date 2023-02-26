@@ -20,10 +20,10 @@ namespace oodb_desktop_client.services
     /// </summary>
     public abstract class BaseService
     {
-        protected DataGridView _dataGridView;
+        public DataGridView dataGridView;
         public BaseService(DataGridView data)
         {
-            _dataGridView = data;
+            dataGridView = data;
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace oodb_desktop_client.services
         /// <param name="columnName">Название столбца первичного ключа</param>
         public void GetAll<T>(string domainPath, string columnName) where T : IdModel
         {
-            var url = $"{ApiUrl.BASE_URL}{ApiUrl.PERST_DOMAIN}{domainPath}{ApiUrl.GET_ALL}";
+            var url = $"{ApiUrl.BASE_URL}{ApiUrl.MONGO_DOMAIN}{domainPath}{ApiUrl.GET_ALL}";
 
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
@@ -46,12 +46,12 @@ namespace oodb_desktop_client.services
 
                 foreach (T item in list)
                 {
-                    if (GridViewUtil.GetIndexByValue(_dataGridView, columnName, item.Id) < 0)
+                    if (GridViewUtil.GetIndexByValue(dataGridView, columnName, item.Id) < 0)
                     {
                         var fields = ReflectionUtil.getFields(item);
 
-                        Action action = () => _dataGridView.Rows.Add(fields.ToArray());
-                        _dataGridView.Invoke(action);
+                        Action action = () => dataGridView.Rows.Add(fields.ToArray());
+                        dataGridView.Invoke(action);
                     }
                 }
             }
@@ -65,7 +65,7 @@ namespace oodb_desktop_client.services
         /// <param name="body">Данные для изменения</param>
         public void Update<T>(T body, string domainPath, string columnName) where T : IdModel
         {
-            var url = $"{ApiUrl.BASE_URL}{ApiUrl.PERST_DOMAIN}{domainPath}{ApiUrl.UPDATE}";
+            var url = $"{ApiUrl.BASE_URL}{ApiUrl.MONGO_DOMAIN}{domainPath}{ApiUrl.UPDATE}";
 
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             httpRequest.Method = "POST";
@@ -98,18 +98,18 @@ namespace oodb_desktop_client.services
                 else
                 {
                     T model = ((T)output);
-                    var index = GridViewUtil.GetIndexByValue(_dataGridView, columnName, model.Id);
+                    var index = GridViewUtil.GetIndexByValue(dataGridView, columnName, model.Id);
                     var fields = ReflectionUtil.getFields(model);
 
                     Action action = () =>
                     {
                         for (var i = 0; i < fields.Count; i++)
                         {
-                            _dataGridView.Rows[index].Cells[i].Value = fields[i];
+                            dataGridView.Rows[index].Cells[i].Value = fields[i];
                         }
                     };
 
-                    _dataGridView.Invoke(action);
+                    dataGridView.Invoke(action);
                 }
             }
 
@@ -122,7 +122,7 @@ namespace oodb_desktop_client.services
         /// <param name="body">Данные для сохранения</param>
         public void Save<T>(T body, string domainPath) where T : IdModel
         {
-            var url = $"{ApiUrl.BASE_URL}{ApiUrl.PERST_DOMAIN}{domainPath}{ApiUrl.SAVE}";
+            var url = $"{ApiUrl.BASE_URL}{ApiUrl.MONGO_DOMAIN}{domainPath}{ApiUrl.SAVE}";
 
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             httpRequest.Method = "POST";
@@ -156,8 +156,8 @@ namespace oodb_desktop_client.services
                 {
                     var fields = ReflectionUtil.getFields((T)output);
 
-                    Action action = () => _dataGridView.Rows.Add(fields.ToArray());
-                    _dataGridView.Invoke(action);
+                    Action action = () => dataGridView.Rows.Add(fields.ToArray());
+                    dataGridView.Invoke(action);
                 }
             }
 
@@ -170,7 +170,7 @@ namespace oodb_desktop_client.services
         /// <param name="admin">Данные для сохранения</param>
         public void Delete<T>(string id, string domainPath, string columnId) where T : IdModel
         {
-            var url = $"{ApiUrl.BASE_URL}{ApiUrl.PERST_DOMAIN}{domainPath}{ApiUrl.DELETE}/{id}";
+            var url = $"{ApiUrl.BASE_URL}{ApiUrl.MONGO_DOMAIN}{domainPath}{ApiUrl.DELETE}/{id}";
 
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             httpRequest.Method = "POST";
@@ -195,9 +195,9 @@ namespace oodb_desktop_client.services
                 }
                 else
                 {
-                    var index = GridViewUtil.GetIndexByValue(_dataGridView, columnId, id);
-                    Action action = () => _dataGridView.Rows.RemoveAt(index);
-                    _dataGridView.Invoke(action);
+                    var index = GridViewUtil.GetIndexByValue(dataGridView, columnId, id);
+                    Action action = () => dataGridView.Rows.RemoveAt(index);
+                    dataGridView.Invoke(action);
                 }
             }
 

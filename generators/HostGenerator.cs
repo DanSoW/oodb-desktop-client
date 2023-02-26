@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace oodb_desktop_client.generators
 {
+	/// <summary>
+	/// Класс генератора объектов коллекции Host
+	/// </summary>
     public class HostGenerator
     {
 		private HostService _hostService;

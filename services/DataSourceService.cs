@@ -15,6 +15,9 @@ using System.Windows.Forms;
 
 namespace oodb_desktop_client.services
 {
+    /// <summary>
+    /// Класс сервиса для коллекции объектов DataSource
+    /// </summary>
     public class DataSourceService : BaseService
     {
         public DataSourceService(DataGridView data) : base(data) { }
@@ -65,8 +68,8 @@ namespace oodb_desktop_client.services
         {
             Form prompt = new Form()
             {
-                Width = 400,
-                Height = 200,
+                Width = 300,
+                Height = 300,
                 FormBorderStyle = FormBorderStyle.FixedDialog,
                 Text = text,
                 StartPosition = FormStartPosition.CenterScreen
@@ -89,6 +92,8 @@ namespace oodb_desktop_client.services
 
             prompt.Controls.Add(labelUrl);
             prompt.Controls.Add(textBoxUrl);
+
+            prompt.Controls.Add(confirmation);
 
             prompt.AcceptButton = confirmation;
 

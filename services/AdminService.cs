@@ -15,6 +15,9 @@ using System.Windows.Forms;
 
 namespace oodb_desktop_client.services
 {
+    /// <summary>
+    /// Класс сервиса для коллекции объектов Admin
+    /// </summary>
     public class AdminService : BaseService
     {
         public AdminService(DataGridView data) : base(data) {}

@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 
 namespace oodb_desktop_client.generators
 {
-    public class DataSourceGenerator
+	/// <summary>
+	/// Класс генератора объектов коллекции DataSource
+	/// </summary>
+	public class DataSourceGenerator
 	{
 		private DataSourceService _dataSourceService;
 

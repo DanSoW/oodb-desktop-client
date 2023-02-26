@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace oodb_desktop_client.utils
 {
+    /// <summary>
+    /// Класс, предоставляющий статические методы для упрощения работы с механизмом рефлексии
+    /// </summary>
     public class ReflectionUtil
     {
         public static List<object> getFields<T>(T element) where T : IdModel

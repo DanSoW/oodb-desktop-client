@@ -242,9 +242,9 @@ namespace oodb_desktop_client
                 "Изменение",
                 "update",
                 new DataSourceModel(
-                    dataGridHost.Rows[index].Cells[0].Value.ToString(),
-                    dataGridHost.Rows[index].Cells[1].Value.ToString(),
-                    dataGridHost.Rows[index].Cells[2].Value.ToString()
+                    dataGridDataSource.Rows[index].Cells[0].Value.ToString(),
+                    dataGridDataSource.Rows[index].Cells[1].Value.ToString(),
+                    dataGridDataSource.Rows[index].Cells[2].Value.ToString()
                 )
             );
         }
@@ -349,6 +349,44 @@ namespace oodb_desktop_client
         private void button10_Click(object sender, EventArgs e)
         {
             _serviceService.GetAll();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            List<string> combobox = new List<string>();
+            _dataSourceService.GetAll();
+
+            for(int i = 0; i < _dataSourceService.dataGridView.RowCount; i++)
+            {
+                combobox.Add(_dataSourceService.dataGridView.Rows[i].Cells[0].Value.ToString());
+            }
+
+            _serviceService.ShowDialog("Добавление", combobox.ToArray());
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            List<string> combobox = new List<string>();
+            _dataSourceService.GetAll();
+
+            for (int i = 0; i < _dataSourceService.dataGridView.RowCount; i++)
+            {
+                combobox.Add(_dataSourceService.dataGridView.Rows[i].Cells[0].Value.ToString());
+            }
+
+            var index = dataGridService.CurrentRow.Index;
+
+            _serviceService.ShowDialog("Обновление", 
+                combobox.ToArray(), 
+                "update",
+                new ServiceModel(
+                    dataGridService.Rows[index].Cells[0].Value.ToString(),
+                    dataGridService.Rows[index].Cells[1].Value.ToString(),
+                    Int32.Parse(dataGridService.Rows[index].Cells[2].Value.ToString()),
+                    Int32.Parse(dataGridService.Rows[index].Cells[3].Value.ToString()),
+                    dataGridService.Rows[index].Cells[4].Value.ToString()
+                )
+            );
         }
     }
 }

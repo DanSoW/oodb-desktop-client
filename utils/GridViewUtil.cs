@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace oodb_desktop_client.utils
 {
+    /// <summary>
+    /// Класс, предоставляющий статические методы для упрощения работы с GridView
+    /// </summary>
     public class GridViewUtil
     {
         /// <summary>

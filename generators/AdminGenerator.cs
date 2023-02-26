@@ -10,9 +10,9 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace oodb_desktop_client.generators
-{	
+{
 	/// <summary>
-	/// Класс для генерации данных дял таблицы Admins
+	/// Класс генератора объектов коллекции Admin
 	/// </summary>
 	public class AdminGenerator
     {

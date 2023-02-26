@@ -11,6 +11,7 @@ namespace oodb_desktop_client.constants
         static public string BASE_URL = "https://localhost:7095";
         static public string PERST_DOMAIN = "/api/perst";
         static public string DB4O_DOMAIN = "/api/db40";
+        static public string MONGO_DOMAIN = "/api/mongo";
 
         static public string GET = "/get";
         static public string GET_ALL = "/get/all";

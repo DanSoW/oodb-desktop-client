@@ -15,6 +15,9 @@ using System.Windows.Forms;
 
 namespace oodb_desktop_client.services
 {
+    /// <summary>
+    /// Класс сервиса для коллекции объектов Host
+    /// </summary>
     public class HostService : BaseService
     {
         public HostService(DataGridView data) : base(data) { }

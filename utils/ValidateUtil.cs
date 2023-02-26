@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace oodb_desktop_client.utils
 {
+    /// <summary>
+    /// Класс, предоставляющий методы валидации данных
+    /// </summary>
     public class ValidateUtil
     {
         public static bool IsValidEmail(string email)
